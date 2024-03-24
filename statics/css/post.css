@@ -1,0 +1,28 @@
+#post h1,
+#post h2,
+#post h3,
+#post h4,
+#post h5,
+#post h6 {
+	margin: 1.5rem 0 1rem;
+	transition: .5s;
+}
+
+#post h1:hover,
+#post h2:hover,
+#post h3:hover,
+#post h4:hover,
+#post h5:hover,
+#post h6:hover {
+	color: #00c4b6;
+	transform: translateX(5px);
+}
+
+#post #article-container a {
+	color: #0d6efd;
+}
+
+#post #article-container a:hover {
+	color: #00c4b6;
+	text-decoration: none;
+}
