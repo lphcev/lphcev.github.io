@@ -4,13 +4,13 @@
 }
 
 body {
-    font-family: "font";
+    font-family: "font", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 pre,
 code,
 pre code {
-    font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 #footer {
