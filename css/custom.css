@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "font";
+    src: url("2.woff2");
+}
+
+body {
+    font-family: "font";
+}
+
+pre,
+code,
+pre code {
+    font-family: "JetBrains Mono";
+}
+
+#footer {
+    background-color: #263238;
+}
+
+#aside-content .avatar-img img {
+    width: auto;
+}
