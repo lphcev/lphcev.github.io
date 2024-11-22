@@ -1,3 +1,7 @@
+:root {
+    --global-font-size: 1rem;
+}
+
 @font-face {
     font-family: "font";
     src: url("2.woff2");
@@ -15,6 +19,7 @@ a {
 #article-container pre,
 #article-container code {
     font-family: "JetBrains Mono", "font", consolas, Menlo, 'PingFang SC', 'Microsoft JhengHei', sans-serif !important;
+    font-size: 14px;
 }
 
 #footer {
