@@ -14,7 +14,7 @@ a {
 
 #article-container pre,
 #article-container code {
-    font-family: "JetBrains Mono", "font", consolas, Menlo, 'PingFang SC', 'Microsoft JhengHei', sans-serif !important;
+    font-family: "JetBrains Mono", consolas, Menlo, 'PingFang SC', 'Microsoft JhengHei', sans-serif !important;
 }
 
 #footer {
