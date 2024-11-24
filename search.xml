@@ -39,7 +39,7 @@
       <link href="/2019/08/07/default-javascript/"/>
       <url>/2019/08/07/default-javascript/</url>
       
-        <content type="html"><![CDATA[<p>内容将在 2024/12/1 推送，敬请期待 ~</p>]]></content>
+        <content type="html"><![CDATA[<p>JavaScript 是一种用于创建动态和交互式网页内容的编程语言，用于为网页添加交互性，比如表单验证、动画、游戏等。如今，JavaScript 已经成为前端开发的核心技术之一，并且随着 Node.js 的出现，它也可以在服务器端运行，实现全栈开发</p><blockquote><p>🔥本篇文章预涵盖 JavaScript 全部知识（纯底层且不含任何前端基于 JS 的框架），但由于 JS 的内容量太过庞大，单篇文章容量有限，因此会采取树节点分支的形式，拆分成多个子级文章，本篇作为顶层，在内部提供其他子文章的传送门</p></blockquote><hr><h2 id="作用域">作用域</h2>]]></content>
       
       
       <categories>
@@ -78,9 +78,9 @@
       
         <tags>
             
-            <tag> Express </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> Express </tag>
             
             <tag> Node </tag>
             
