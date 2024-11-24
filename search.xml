@@ -35,6 +35,33 @@
     
     
     <entry>
+      <title>JavaScript 高级</title>
+      <link href="/2019/08/07/default-javascript-advanced/"/>
+      <url>/2019/08/07/default-javascript-advanced/</url>
+      
+        <content type="html"><![CDATA[<p>内容将在 2024/12/1 推送，敬请期待 ~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Default </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> ES6+ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Express 笔记</title>
       <link href="/2019/08/07/default-express/"/>
       <url>/2019/08/07/default-express/</url>
