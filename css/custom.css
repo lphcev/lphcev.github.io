@@ -18,4 +18,5 @@ body {
 
 #aside-content .avatar-img img {
     width: auto;
+    border-radius: 50%;
 }
