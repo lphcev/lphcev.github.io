@@ -1,0 +1,381 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Markdown | X-Blog</title><meta name="author" content="XYZ"><meta name="copyright" content="XYZ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Markdown 是一种轻量级标记语言，允许使用简单的文本格式来编写具备特定排版格式的文档。Markdown 的核心理念是“重内容轻形式”，即让写作者能够专注于内容本身，而无需过多纠结于排版细节。它通过简单的标记语法，使普通文本内容具有一定的格式，从而提升了工作效率 语法 Markdown 的语法规则相对简单且直观，主要包括以下元素 标题 通过在单词或短语前面添加井号 # 来创建，# 的数量代表了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown">
+<meta property="og:url" content="https://lphcev.github.io/basic-markdown/index.html">
+<meta property="og:site_name" content="X-Blog">
+<meta property="og:description" content="Markdown 是一种轻量级标记语言，允许使用简单的文本格式来编写具备特定排版格式的文档。Markdown 的核心理念是“重内容轻形式”，即让写作者能够专注于内容本身，而无需过多纠结于排版细节。它通过简单的标记语法，使普通文本内容具有一定的格式，从而提升了工作效率 语法 Markdown 的语法规则相对简单且直观，主要包括以下元素 标题 通过在单词或短语前面添加井号 # 来创建，# 的数量代表了">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://lphcev.github.io/img/bg-default-3.jpg">
+<meta property="article:published_time" content="2019-08-08T04:30:00.000Z">
+<meta property="article:modified_time" content="2024-11-25T10:43:29.608Z">
+<meta property="article:author" content="XYZ">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lphcev.github.io/img/bg-default-3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lphcev.github.io/basic-markdown/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Markdown',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-11-25 18:43:29',
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bg-default-3.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">X-Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Markdown</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Markdown</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2019-08-08T04:30:00.000Z" title="Created 2019-08-08 12:30:00">2019-08-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-11-25T10:43:29.608Z" title="Updated 2024-11-25 18:43:29">2024-11-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Basic/">Basic</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.2k</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Markdown 是一种轻量级标记语言，允许使用简单的文本格式来编写具备特定排版格式的文档。Markdown 的核心理念是“重内容轻形式”，即让写作者能够专注于内容本身，而无需过多纠结于排版细节。它通过简单的标记语法，使普通文本内容具有一定的格式，从而提升了工作效率</p>
+<h2 id="语法">语法</h2>
+<p>Markdown 的语法规则相对简单且直观，主要包括以下元素</p>
+<h3 id="标题">标题</h3>
+<p>通过在单词或短语前面添加井号 <code>#</code> 来创建，<code>#</code> 的数量代表了标题的级别。通常，一级标题用于整篇文章的标题（但很多文章选择省略一级标题，直接使用二级标题作为根标题），后续标题等级依次递减，用于文章内部的小节划分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">#### 四级标题</span><br><span class="line">##### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
+<h3 id="列表">列表</h3>
+<p>无序列表通过在每个列表项前面添加破折号 <code>-</code>、星号 <code>*</code> 或加号 <code>+</code> 来创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- 列表项 1</span><br><span class="line">- 列表项 2</span><br><span class="line">- 列表项 3</span><br><span class="line"></span><br><span class="line">* 列表项 4</span><br><span class="line">* 列表项 5</span><br><span class="line">* 列表项 6</span><br><span class="line"></span><br><span class="line">+ 列表项 7</span><br><span class="line">+ 列表项 8</span><br><span class="line">+ 列表项 9</span><br></pre></td></tr></table></figure>
+<p>有序列表则在每个列表项前添加数字并紧跟一个句点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 列表项 A</span><br><span class="line">2. 列表项 B</span><br><span class="line">3. 列表项 C</span><br></pre></td></tr></table></figure>
+<h3 id="超链接和图片">超链接和图片</h3>
+<p>通过特定的语法来插入网页链接和图片</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![图片描述](图片网址)</span><br><span class="line">[链接描述](链接网址)</span><br></pre></td></tr></table></figure>
+<p>“图片描述”相当于注释，不会在网页中显示，“链接描述”是用户点击后跳转到的目标地址的文本描述</p>
+<h3 id="引用">引用</h3>
+<p>使用符号 <code>&gt;</code> 来实现，可以单独划出一块编辑空间，与正文形成明显的划分。引用块内部可以嵌套其他 Markdown 元素，如标题、列表、代码等。在引用块内部再次使用 <code>&gt;</code> 符号进行嵌套引用，每嵌套一层，<code>&gt;</code> 符号数量增加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是一段测试内容</span><br></pre></td></tr></table></figure>
+<h3 id="代码">代码</h3>
+<p>使用反引号 (`) 将代码内容包裹起来，或使用三个反引号 (```) 包围代码块，并可指定编程语言以获得合适的高亮</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">这是行内代码：`console.log(&quot;Hello World&quot;)`</span><br><span class="line"></span><br><span class="line">这是代码块</span><br><span class="line"></span><br><span class="line">```js</span><br><span class="line">function fn() &#123;</span><br><span class="line">    console.log(&quot;Hello World&quot;);</span><br><span class="line">&#125;</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+<h3 id="文本强调">文本强调</h3>
+<p>使用星号 <code>*</code> 或下划线 <code>_</code> 将文本设置为粗体或斜体来强调其重要性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*这是一段斜体内容*</span><br><span class="line">_这是一段斜体内容_</span><br><span class="line"></span><br><span class="line">**这是一段粗体内容**</span><br><span class="line">__这是一段粗体内容__</span><br><span class="line"></span><br><span class="line">***这是一段加粗且倾斜的内容***</span><br><span class="line">___这是一段加粗且倾斜的内容___</span><br></pre></td></tr></table></figure>
+<h3 id="分隔符">分隔符</h3>
+<p>单独一行上使用三个或多个星号 <code>***</code>、破折号 <code>---</code> 或下划线 <code>___</code> 来创建分隔线</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">***</span><br><span class="line">---</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
+<h3 id="表格">表格</h3>
+<p>使用三个或多个连字符 <code>---</code> 分割标题行和内容行，并使用管道 <code>|</code> 分隔每列</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| A1 | A2 | A3 |</span><br><span class="line">| -- | -- | -- |</span><br><span class="line">| B1 | B2 | B3 |</span><br><span class="line">| C1 | C2 | C3 |</span><br><span class="line">| D1 | D2 | D3 |</span><br></pre></td></tr></table></figure>
+<h2 id="Emoji">Emoji</h2>
+<p>🔥</p>
+<h2 id="Mermaid-示例">Mermaid 示例</h2>
+<pre><code class="highlight mermaid">graph TD;
+  A--&gt;B;
+  B--&gt;C;
+  B--&gt;D</code></pre>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  pie
+title Language
+&quot;Java&quot; : 30
+&quot;HTML&quot; : 10
+&quot;CSS&quot; : 20
+&quot;JavaScript&quot; : 50
+  </pre></div>
+<h2 id="标签外挂">标签外挂</h2>
+<p>在 Hexo 中，标签插件（或称为外挂）是用于增强站点功能的重要组件。这些插件可以添加新的功能、改进现有的功能或与第三方服务集成，接下来介绍几种项目中常用的标签外挂</p>
+<h3 id="Tabs">Tabs</h3>
+<p>Tab 可以切换不同的内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs example %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab One --&gt;</span><br><span class="line"></span><br><span class="line">第一个 Tab</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab Two --&gt;</span><br><span class="line"></span><br><span class="line">第二个 Tab</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab Three --&gt;</span><br><span class="line"></span><br><span class="line">第三个 Tab</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如下</p>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">One</button><button type="button" class="tab">Two</button><button type="button" class="tab">Three</button></div><div class="tab-contents"><div class="tab-item-content active"><p>第一个 Tab</p></div><div class="tab-item-content"><p>第二个 Tab</p></div><div class="tab-item-content"><p>第三个 Tab</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h3 id="Tag-hide">Tag-hide</h3>
+<p>如果你想把一些文字、内容隐藏起来，并提供按钮让用户点击显示。可以使用这个标签外挂</p>
+<h4 id="inline">inline</h4>
+<p>inline 在文本里面添加按钮隐藏内容，只限文字</p>
+<p>隐藏的内容不能包含英文逗号，可用 <code>&amp;sbquo;</code> 转义符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">5 * 100 + 20 =&#123;% hideInline 520, 查看答案 %&#125;</span><br><span class="line"></span><br><span class="line">答案后面是什么? &#123;% hideInline 1314 %&#125;</span><br></pre></td></tr></table></figure>
+<p>5 * 100 + 20 =<span class="hide-inline"><button type="button" class="hide-button" style=""> 查看答案
+  </button><span class="hide-content">520</span></span></p>
+<p>答案后面是什么? <span class="hide-inline"><button type="button" class="hide-button" style="">Click
+  </button><span class="hide-content">1314</span></span></p>
+<h4 id="block">block</h4>
+<p>block 可以隐藏很多内容，包括图片，代码块等</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">陋室铭前两句是什么？</span><br><span class="line"></span><br><span class="line">&#123;% hideBlock 查看答案 %&#125;</span><br><span class="line"></span><br><span class="line">山不在高，有仙则名。</span><br><span class="line"></span><br><span class="line">水不在深，有龙则灵。</span><br><span class="line"></span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure>
+<p>陋室铭前两句是什么？</p>
+<div class="hide-block"><button type="button" class="hide-button" style="">查看答案
+    </button><div class="hide-content"><p>山不在高，有仙则名。</p>
+<p>水不在深，有龙则灵。</p>
+</div></div>
+<blockquote>
+<p>请注意，tag-hide 内的标签外挂 content 内都不建议有 h1 - h6 等标题。因为 Toc 会把隐藏内容标题也显示出来，而且当滚动屏幕时，如果隐藏内容没有显示出来，会导致 Toc 的滚动出现异常</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://lphcev.github.io">XYZ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://lphcev.github.io/basic-markdown/">https://lphcev.github.io/basic-markdown/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Markdown/">Markdown</a></div><div class="post-share"><div class="social-share" data-image="/img/bg-default-3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/basic-javascript/" title="JavaScript"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/bg-default-4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">JavaScript</div></div><div class="info-2"><div class="info-item-1">内容将于 2024 年 12 月 1 日完成推送 </div></div></div></a><a class="pagination-related  no-desc" href="/default-undigested/" title="Undigested"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/bg-default-2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Undigested</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">XYZ</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lphcev"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">当前版本 v1.0.0 <br> 每周日早上推送一次，所有内容仅供学习参考。如有问题可发邮箱 <i class="fas fa-envelope"></i> lphcev@163.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5%E5%92%8C%E5%9B%BE%E7%89%87"><span class="toc-number">1.3.</span> <span class="toc-text">超链接和图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text">引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.5.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%BC%BA%E8%B0%83"><span class="toc-number">1.6.</span> <span class="toc-text">文本强调</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-number">1.7.</span> <span class="toc-text">分隔符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC"><span class="toc-number">1.8.</span> <span class="toc-text">表格</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Emoji"><span class="toc-number">2.</span> <span class="toc-text">Emoji</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mermaid-%E7%A4%BA%E4%BE%8B"><span class="toc-number">3.</span> <span class="toc-text">Mermaid 示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82"><span class="toc-number">4.</span> <span class="toc-text">标签外挂</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tabs"><span class="toc-number">4.1.</span> <span class="toc-text">Tabs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tag-hide"><span class="toc-number">4.2.</span> <span class="toc-text">Tag-hide</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#inline"><span class="toc-number">4.2.1.</span> <span class="toc-text">inline</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#block"><span class="toc-number">4.2.2.</span> <span class="toc-text">block</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/default-quickstart/" title="Quick Start"><img src= "/img/loading.gif" data-lazy-src="/img/bg-default-1.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Quick Start"/></a><div class="content"><a class="title" href="/default-quickstart/" title="Quick Start">Quick Start</a><time datetime="2099-12-31T15:59:59.000Z" title="Created 2099-12-31 23:59:59">2099-12-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/framework-express/" title="Express"><img src= "/img/loading.gif" data-lazy-src="/img/bg-default-5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Express"/></a><div class="content"><a class="title" href="/framework-express/" title="Express">Express</a><time datetime="2020-01-02T04:30:00.000Z" title="Created 2020-01-02 12:30:00">2020-01-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/basic-javascript/" title="JavaScript"><img src= "/img/loading.gif" data-lazy-src="/img/bg-default-4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript"/></a><div class="content"><a class="title" href="/basic-javascript/" title="JavaScript">JavaScript</a><time datetime="2020-01-01T04:30:00.000Z" title="Created 2020-01-01 12:30:00">2020-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/basic-markdown/" title="Markdown"><img src= "/img/loading.gif" data-lazy-src="/img/bg-default-3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown"/></a><div class="content"><a class="title" href="/basic-markdown/" title="Markdown">Markdown</a><time datetime="2019-08-08T04:30:00.000Z" title="Created 2019-08-08 12:30:00">2019-08-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/default-undigested/" title="Undigested"><img src= "/img/loading.gif" data-lazy-src="/img/bg-default-2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Undigested"/></a><div class="content"><a class="title" href="/default-undigested/" title="Undigested">Undigested</a><time datetime="2019-08-07T04:30:00.000Z" title="Created 2019-08-07 12:30:00">2019-08-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By XYZ</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const $chartjs = document.querySelectorAll('#article-container .chartjs-container')
+  if ($chartjs.length === 0) return
+
+  const applyThemeDefaultsConfig = theme => {
+    if (theme === 'dark-mode') {
+      Chart.defaults.color = "rgba(255, 255, 255, 0.8)"
+      Chart.defaults.borderColor = "rgba(255, 255, 255, 0.2)"
+      Chart.defaults.scale.ticks.backdropColor = "transparent"
+    } else {
+      Chart.defaults.color = "rgba(0, 0, 0, 0.8)"
+      Chart.defaults.borderColor = "rgba(0, 0, 0, 0.1)"
+      Chart.defaults.scale.ticks.backdropColor = "transparent"
+    }
+  }
+
+  // Recursively traverse the config object and automatically apply theme-specific color schemes
+  const applyThemeConfig = (obj, theme) => {
+    if (typeof obj !== 'object' || obj === null) return
+    
+    Object.keys(obj).forEach(key => {
+      const value = obj[key]
+      // If the property is an object and has theme-specific options, apply them
+      if (typeof value === 'object' && value !== null) {
+        if (value[theme]) {
+          obj[key] = value[theme] // Apply the value for the current theme
+        } else {
+          // Recursively process child objects
+          applyThemeConfig(value, theme)
+        }
+      }
+    })
+  }
+
+  const runChartJS = () => {
+    window.loadChartJS = true
+
+    Array.from($chartjs).forEach((item, index) => {
+      const chartSrc = item.firstElementChild
+      const chartID = item.getAttribute('data-chartjs-id') || ('chartjs-' + index) // Use custom ID or default ID
+      const width = item.getAttribute('data-width')
+      const existingCanvas = document.getElementById(chartID)
+
+      // If a canvas already exists, remove it to avoid rendering duplicates
+      if (existingCanvas) {
+          existingCanvas.parentNode.remove()
+      }
+
+      const chartDefinition = chartSrc.textContent
+      const canvas = document.createElement('canvas')
+      canvas.id = chartID
+
+      const div = document.createElement('div')
+      div.className = 'chartjs-wrap'
+
+      if (width) {
+        div.style.width = width
+      }
+
+      div.appendChild(canvas)
+      chartSrc.insertAdjacentElement('afterend', div)
+
+      const ctx = document.getElementById(chartID).getContext('2d')
+
+      const config = JSON.parse(chartDefinition)
+
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark-mode' : 'light-mode'
+
+      // Set default styles (initial setup)
+      applyThemeDefaultsConfig(theme)
+
+      // Automatically traverse the config and apply dual-mode color schemes
+      applyThemeConfig(config, theme)
+
+      new Chart(ctx, config)
+    })
+  }
+
+  const loadChartJS = () => {
+    window.loadChartJS ? runChartJS() : btf.getScript('/npm/chart.js/dist/chart.umd.min.js').then(runChartJS)
+  }
+
+  // Listen for theme change events
+  btf.addGlobalFn('themeChange', runChartJS, 'chartjs')
+  btf.addGlobalFn('encrypt', runChartJS, 'chartjs')
+
+  window.pjax ? loadChartJS() : document.addEventListener('DOMContentLoaded', loadChartJS)
+})()</script></div><script src="/js/custom.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="请输入搜索关键字..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
