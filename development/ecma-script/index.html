@@ -1,0 +1,382 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ECMAScript 标准 | X-Blog</title><meta name="author" content="XYZ"><meta name="copyright" content="XYZ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="ECMAScript 全称 European Computer Manufacturers Association Script，简称 ES，是一种由 Ecma 国际组织标准化的脚本语言规范，它是 JavaScript 的标准化版本，定义了语言的核心特性  先决条件 阅读本文之前需要熟练掌握 HTML &#x2F; CSS &#x2F; JS 网页基础知识 点击跳转   变量的声明 在 JavaScript 中，va">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ECMAScript 标准">
+<meta property="og:url" content="https://lphcev.github.io/development/ecma-script/index.html">
+<meta property="og:site_name" content="X-Blog">
+<meta property="og:description" content="ECMAScript 全称 European Computer Manufacturers Association Script，简称 ES，是一种由 Ecma 国际组织标准化的脚本语言规范，它是 JavaScript 的标准化版本，定义了语言的核心特性  先决条件 阅读本文之前需要熟练掌握 HTML &#x2F; CSS &#x2F; JS 网页基础知识 点击跳转   变量的声明 在 JavaScript 中，va">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://lphcev.github.io/img/bg-default-4.jpg">
+<meta property="article:published_time" content="2019-01-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-23T06:52:46.389Z">
+<meta property="article:author" content="XYZ">
+<meta property="article:tag" content="ECMAScript">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lphcev.github.io/img/bg-default-4.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lphcev.github.io/development/ecma-script/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ECMAScript 标准',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-02-23 14:52:46',
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/bg-default-4.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">X-Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">ECMAScript 标准</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">ECMAScript 标准</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2019-01-01T16:00:00.000Z" title="Created 2019-01-02 00:00:00">2019-01-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-02-23T06:52:46.389Z" title="Updated 2025-02-23 14:52:46">2025-02-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Development/">Development</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.6k</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>ECMAScript 全称 European Computer Manufacturers Association Script，简称 ES，是一种由 Ecma 国际组织标准化的脚本语言规范，它是 JavaScript 的标准化版本，定义了语言的核心特性</p>
+<blockquote>
+<p>先决条件</p>
+<p>阅读本文之前需要熟练掌握 HTML / CSS / JS 网页基础知识 <a href="/development/web-fundamentals/">点击跳转</a></p>
+</blockquote>
+<hr>
+<h2 id="变量的声明">变量的声明</h2>
+<p>在 JavaScript 中，var / let / const 都用于声明变量，但它们的行为和作用域有所不同</p>
+<h3 id="使用-var-声明">使用 var 声明</h3>
+<p>具有函数作用域，如果在函数内声明，变量仅在函数内有效；如果在函数外声明，则为全局变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> num = <span class="number">1</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">func</span>(); <span class="comment">// 1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num); <span class="comment">// ReferenceError: num is not defined</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> num = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>变量声明会被提升到函数或全局作用域的顶部，但赋值不会提升</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num); <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>允许在同一作用域内重复声明</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> num = <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="使用-let-声明">使用 let 声明</h3>
+<p>具有块级作用域，变量仅在声明它的块 <code>&#123;&#125;</code> 内有效</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> num = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num); <span class="comment">// ReferenceError: num is not defined</span></span><br></pre></td></tr></table></figure>
+<p>let 声明同样会被提升，但在初始化之前会出现<a href="#%E6%9A%82%E6%97%B6%E6%80%A7%E6%AD%BB%E5%8C%BA">暂时性死区</a>，访问会抛出 ReferenceError</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(num); <span class="comment">// ReferenceError: Cannot access &#x27;num&#x27; before initialization</span></span><br><span class="line"><span class="keyword">let</span> num = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>let 不允许在同一作用域内重复声明</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> num = <span class="number">2</span>; <span class="comment">// SyntaxError: Identifier &#x27;num&#x27; has already been declared</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用-const-声明">使用 const 声明</h3>
+<p>let 的常量形式，使用 const 在声明时必须初始化，且不能重新赋值，但对于对象和数组，可以修改其属性和元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num; <span class="comment">// SyntaxError: Missing initializer in const declaration</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num = <span class="number">1</span>;</span><br><span class="line">num = <span class="number">2</span>; <span class="comment">// TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
+<h3 id="暂时性死区">暂时性死区</h3>
+<p>暂时性死区（Temporal Dead Zone, TDZ）是指从进入作用域到变量声明之间的区域，在这段时间内访问变量会抛出 ReferenceError。let 和 const 声明的变量在声明之前是不可访问的，即使它们已经被提升</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// TDZ Start</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(num); <span class="comment">// ReferenceError: Cannot access &#x27;num&#x27; before initialization</span></span><br><span class="line">  <span class="keyword">let</span> num = <span class="number">1</span>; <span class="comment">// TDZ End</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(num); <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>TDZ 的开始：进入块级作用域 <code>&#123;&#125;</code> 时，<code>num</code> 的声明被提升，但此时变量处于未初始化状态</p>
+<p>TDZ 的结束：执行到 <code>let num = 1</code> 时，变量被初始化，TDZ 结束，之后可以正常访问</p>
+<p>为什么会有暂时性死区？</p>
+<p>暂时性死区的设计是为了避免变量在声明之前被意外使用，从而减少潜在的错误。这种行为使得 JavaScript 更加严谨，尤其是在大型项目中，可以帮助开发者更容易地发现和修复问题</p>
+<h2 id="Promise">Promise</h2>
+<p>Promise 是 JavaScript 中用于处理异步操作的对象。它代表一个异步操作的最终完成（或失败）及其结果值。Promise 提供了一种更优雅的方式来处理异步代码，避免了传统的回调地狱（Callback Hell）</p>
+<h2 id="ES6-简化语法">ES6+ 简化语法</h2>
+<p>ES6 之后引入了许多简化语法，提升了代码的可读性和简洁性</p>
+<h3 id="箭头函数">箭头函数</h3>
+<p>箭头函数（Arrow Function）是 JavaScript 中一种简洁的函数定义方式，使用 <code>=&gt;</code> 语法来定义函数</p>
+<h4 id="代码示例">代码示例</h4>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">Example1</button><button type="button" class="tab">Example2</button><button type="button" class="tab">Example3</button><button type="button" class="tab">Example4</button></div><div class="tab-contents"><div class="tab-item-content active"><p>箭头函数的基本语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">const</span> funcOrdinary = <span class="keyword">function</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> c = a + b;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(c);</span><br><span class="line">  <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">funcArrow</span> = (<span class="params">a, b</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> c = a + b;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(c);</span><br><span class="line">  <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-item-content"><p>当方法体内只有一行 return 时，可以省略  <code>{ return }</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">const</span> funcOrdinary = <span class="keyword">function</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">funcArrow</span> = (<span class="params">a, b</span>) =&gt; a + b</span><br></pre></td></tr></table></figure></div><div class="tab-item-content"><p>当方法体内只有一行代码时，可以省略 <code>{}</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">const</span> funcOrdinary = <span class="keyword">function</span>(<span class="params">a, b</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a + b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">funcArrow</span> = (<span class="params">a, b</span>) =&gt; <span class="variable language_">console</span>.<span class="title function_">log</span>(a + b);</span><br></pre></td></tr></table></figure></div><div class="tab-item-content"><p>当参数只有一个时，可以省略 <code>()</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">const</span> funcOrdinary = <span class="keyword">function</span>(<span class="params">a</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">funcArrow</span> = a =&gt; <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br></pre></td></tr></table></figure></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h4 id="特点">特点</h4>
+<p>不会创建自己的 this，而是继承外层作用域的 this</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;XYZ&#x27;</span>,</span><br><span class="line">  <span class="attr">func</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person.<span class="title function_">func</span>() <span class="comment">// XYZ</span></span><br></pre></td></tr></table></figure>
+<p>不能使用 call / apply / bind 改变 this 指向</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">func</span> = (<span class="params"></span>) =&gt; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line"><span class="keyword">const</span> person = &#123; <span class="attr">name</span>: <span class="string">&#x27;XYZ&#x27;</span> &#125;;</span><br><span class="line">func.<span class="title function_">call</span>(person); <span class="comment">// Window &#123;...&#125;</span></span><br></pre></td></tr></table></figure>
+<p>不能使用 new 关键字调用，因为它没有 Construct 内部方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">Person</span> = (<span class="params"></span>) =&gt; &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> person = <span class="keyword">new</span> <span class="title class_">Person</span>(); <span class="comment">// TypeError: Person is not a constructor</span></span><br></pre></td></tr></table></figure>
+<p>没有自己的 arguments 对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">func</span> = (<span class="params">a, b</span>) =&gt; <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">arguments</span>);</span><br><span class="line"><span class="title function_">func</span>(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// ReferenceError: arguments is not defined</span></span><br></pre></td></tr></table></figure>
+<p>可以通过剩余参数（Rest Parameters）获取参数列表</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">func</span> = (<span class="params">...args</span>) =&gt; <span class="variable language_">console</span>.<span class="title function_">log</span>(args);</span><br><span class="line"><span class="title function_">func</span>(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// [1, 2]</span></span><br></pre></td></tr></table></figure>
+<h3 id="模板字符串">模板字符串</h3>
+<p>模板字符串（Template Literals）是一种允许嵌入表达式的字符串字面量。它们使用反引号而不是单引号或双引号来定义。模板字符串提供了更强大的字符串操作功能，包括多行字符串和字符串插值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> id = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;XYZ&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;id = &#x27;</span> + id + <span class="string">&#x27;, name = &#x27;</span> + name);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`id = <span class="subst">$&#123;id&#125;</span>, name = <span class="subst">$&#123;name&#125;</span>`</span>);</span><br></pre></td></tr></table></figure>
+<p>在这个例子中，<code>$&#123;xxx&#125;</code> 是一个占位符，它会被变量 <code>xxx</code> 的值替换。占位符还可以嵌入表达式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Result is <span class="subst">$&#123;func() ? <span class="string">`true`</span> : <span class="string">`false`</span> &#125;</span>`</span>); <span class="comment">// Result is true</span></span><br></pre></td></tr></table></figure>
+<p>模板字符串支持换行，因此不需要使用转义字符。模板字符串内文本的所有格式都会被保留</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`</span></span><br><span class="line"><span class="string">  &lt;div&gt;</span></span><br><span class="line"><span class="string">    &lt;span&gt;Content&lt;/span&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  &lt;div&gt;</span></span><br><span class="line"><span class="comment">    &lt;span&gt;Content&lt;/span&gt;</span></span><br><span class="line"><span class="comment">  &lt;/div&gt;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>标签模板（Tagged Templates）是一种更高级的用法，允许你使用函数来解析模板字符串。这个函数被称为“标签函数”，它可以对模板字符串中的各个部分进行处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params">strings, ...values</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> result = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  strings.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    result += item;</span><br><span class="line">    <span class="keyword">if</span> (values[index]) &#123;</span><br><span class="line">      result += <span class="string">`&lt;span&gt;<span class="subst">$&#123;values[index]&#125;</span>&lt;/span&gt;`</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;XYZ&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(func<span class="string">`Hello, my name is <span class="subst">$&#123;name&#125;</span>`</span>); <span class="comment">// Hello, my name is &lt;span&gt;XYZ&lt;/span&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子中，<code>func</code> 函数接收两个参数：<code>strings</code> 是一个包含模板字符串中所有静态部分的数组，<code>values</code> 是一个包含所有嵌入表达式的数组</p>
+<h3 id="解构">解构</h3>
+<p>解构赋值（Destructuring Assignment）允许你从数组或对象中提取值，并将其赋给变量。解构赋值使得代码更简洁、易读</p>
+<h4 id="数组解构">数组解构</h4>
+<p>数组解构允许你从数组中提取值，并按顺序赋值给变量</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">const</span> a = arr[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">const</span> b = arr[<span class="number">1</span>];</span><br><span class="line"><span class="keyword">const</span> c = arr[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">const</span> [x, y, z] = arr;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(x, y, z); <span class="comment">// 1 2 3</span></span><br></pre></td></tr></table></figure>
+<p>你可以使用逗号跳过不需要的元素</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://lphcev.github.io">XYZ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://lphcev.github.io/development/ecma-script/">https://lphcev.github.io/development/ecma-script/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ECMAScript/">ECMAScript</a><a class="post-meta__tags" href="/tags/JavaScript/">JavaScript</a></div><div class="post-share"><div class="social-share" data-image="/img/bg-default-4.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/default/quickstart/" title="Quickstart"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/bg-default-1.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Quickstart</div></div><div class="info-2"><div class="info-item-1">[置顶] X-Blog 是一个基于 Hexo + Butterfly 搭建的个人博客站点，采用 Markdown 来编写文章，并兼容大部分功能如 Emoji、Mermaid、Graph、Mermaid、标签外挂等。本文主要讲述 X-Blog 的基本使用  Markdown Markdown 是一种轻量级标记语言，它使用简单的纯文本格式语法，可快速转换为结构化的 HTML 或其他格式文档。其核心设计理念是易读易写，适合编写文档、笔记、博客甚至书籍 为什么选择 Markdown？  轻量高效：无需复杂排版工具，纯文本即可编写 跨平台兼容：可在任何文本编辑器中编写，支持 GitHub、博客平台等 专注内容：通过简单符号实现排版，减少对格式的干扰 灵活扩展：支持 HTML 嵌入，并衍生出多种扩展语法（如表格、流程图）  基础语法 标题 123456# One Title## Two Title### Three Title#### Four Title##### Five Title###### Six Title 无序列表 1234567891011- Item- Item-...</div></div></div></a><a class="pagination-related  no-desc" href="/development/web-fundamentals/" title="Web Fundamentals 网页基础"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/bg-default-3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Web Fundamentals 网页基础</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related no-desc" href="/development/web-fundamentals/" title="Web Fundamentals 网页基础"><img class="cover" src= "/img/loading.gif" data-lazy-src="/img/bg-default-3.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2019-01-01</div><div class="info-item-2">Web Fundamentals 网页基础</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">XYZ</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lphcev"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">当前版本 v1.0.0 <br> 所有内容仅供学习参考，如有问题可发邮箱 <i class="fas fa-envelope"></i> lphcev@163.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">变量的声明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-var-%E5%A3%B0%E6%98%8E"><span class="toc-number">1.1.</span> <span class="toc-text">使用 var 声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-let-%E5%A3%B0%E6%98%8E"><span class="toc-number">1.2.</span> <span class="toc-text">使用 let 声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-const-%E5%A3%B0%E6%98%8E"><span class="toc-number">1.3.</span> <span class="toc-text">使用 const 声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%82%E6%97%B6%E6%80%A7%E6%AD%BB%E5%8C%BA"><span class="toc-number">1.4.</span> <span class="toc-text">暂时性死区</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise"><span class="toc-number">2.</span> <span class="toc-text">Promise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6-%E7%AE%80%E5%8C%96%E8%AF%AD%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">ES6+ 简化语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-number">3.1.</span> <span class="toc-text">箭头函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="toc-number">3.1.1.</span> <span class="toc-text">代码示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">3.1.2.</span> <span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">3.2.</span> <span class="toc-text">模板字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%84"><span class="toc-number">3.3.</span> <span class="toc-text">解构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E8%A7%A3%E6%9E%84"><span class="toc-number">3.3.1.</span> <span class="toc-text">数组解构</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/default/quickstart/" title="Quickstart"><img src= "/img/loading.gif" data-lazy-src="/img/bg-default-1.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Quickstart"/></a><div class="content"><a class="title" href="/default/quickstart/" title="Quickstart">Quickstart</a><time datetime="2099-12-31T15:59:59.000Z" title="Created 2099-12-31 23:59:59">2099-12-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/development/ecma-script/" title="ECMAScript 标准"><img src= "/img/loading.gif" data-lazy-src="/img/bg-default-4.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ECMAScript 标准"/></a><div class="content"><a class="title" href="/development/ecma-script/" title="ECMAScript 标准">ECMAScript 标准</a><time datetime="2019-01-01T16:00:00.000Z" title="Created 2019-01-02 00:00:00">2019-01-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/development/web-fundamentals/" title="Web Fundamentals 网页基础"><img src= "/img/loading.gif" data-lazy-src="/img/bg-default-3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Web Fundamentals 网页基础"/></a><div class="content"><a class="title" href="/development/web-fundamentals/" title="Web Fundamentals 网页基础">Web Fundamentals 网页基础</a><time datetime="2018-12-31T16:00:00.000Z" title="Created 2019-01-01 00:00:00">2019-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/default/undigested/" title="Undigested"><img src= "/img/loading.gif" data-lazy-src="/img/bg-default-2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Undigested"/></a><div class="content"><a class="title" href="/default/undigested/" title="Undigested">Undigested</a><time datetime="2000-01-01T16:00:00.000Z" title="Created 2000-01-02 00:00:00">2000-01-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/default/hello-world/" title="Hello World"><img src= "/img/loading.gif" data-lazy-src="/img/bg-default-0.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/default/hello-world/" title="Hello World">Hello World</a><time datetime="1999-12-31T16:00:00.000Z" title="Created 2000-01-01 00:00:00">2000-01-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By XYZ</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const $chartjs = document.querySelectorAll('#article-container .chartjs-container')
+  if ($chartjs.length === 0) return
+
+  const applyThemeDefaultsConfig = theme => {
+    if (theme === 'dark-mode') {
+      Chart.defaults.color = "rgba(255, 255, 255, 0.8)"
+      Chart.defaults.borderColor = "rgba(255, 255, 255, 0.2)"
+      Chart.defaults.scale.ticks.backdropColor = "transparent"
+    } else {
+      Chart.defaults.color = "rgba(0, 0, 0, 0.8)"
+      Chart.defaults.borderColor = "rgba(0, 0, 0, 0.1)"
+      Chart.defaults.scale.ticks.backdropColor = "transparent"
+    }
+  }
+
+  // Recursively traverse the config object and automatically apply theme-specific color schemes
+  const applyThemeConfig = (obj, theme) => {
+    if (typeof obj !== 'object' || obj === null) return
+    
+    Object.keys(obj).forEach(key => {
+      const value = obj[key]
+      // If the property is an object and has theme-specific options, apply them
+      if (typeof value === 'object' && value !== null) {
+        if (value[theme]) {
+          obj[key] = value[theme] // Apply the value for the current theme
+        } else {
+          // Recursively process child objects
+          applyThemeConfig(value, theme)
+        }
+      }
+    })
+  }
+
+  const runChartJS = () => {
+    window.loadChartJS = true
+
+    Array.from($chartjs).forEach((item, index) => {
+      const chartSrc = item.firstElementChild
+      const chartID = item.getAttribute('data-chartjs-id') || ('chartjs-' + index) // Use custom ID or default ID
+      const width = item.getAttribute('data-width')
+      const existingCanvas = document.getElementById(chartID)
+
+      // If a canvas already exists, remove it to avoid rendering duplicates
+      if (existingCanvas) {
+          existingCanvas.parentNode.remove()
+      }
+
+      const chartDefinition = chartSrc.textContent
+      const canvas = document.createElement('canvas')
+      canvas.id = chartID
+
+      const div = document.createElement('div')
+      div.className = 'chartjs-wrap'
+
+      if (width) {
+        div.style.width = width
+      }
+
+      div.appendChild(canvas)
+      chartSrc.insertAdjacentElement('afterend', div)
+
+      const ctx = document.getElementById(chartID).getContext('2d')
+
+      const config = JSON.parse(chartDefinition)
+
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark-mode' : 'light-mode'
+
+      // Set default styles (initial setup)
+      applyThemeDefaultsConfig(theme)
+
+      // Automatically traverse the config and apply dual-mode color schemes
+      applyThemeConfig(config, theme)
+
+      new Chart(ctx, config)
+    })
+  }
+
+  const loadChartJS = () => {
+    window.loadChartJS ? runChartJS() : btf.getScript('/npm/chart.js/dist/chart.umd.min.js').then(runChartJS)
+  }
+
+  // Listen for theme change events
+  btf.addGlobalFn('themeChange', runChartJS, 'chartjs')
+  btf.addGlobalFn('encrypt', runChartJS, 'chartjs')
+
+  window.pjax ? loadChartJS() : document.addEventListener('DOMContentLoaded', loadChartJS)
+})()</script></div><script src="/js/custom.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="请输入搜索关键字..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
