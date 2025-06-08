@@ -1,0 +1,11 @@
+.el-comp-tabs .el-pane {
+  display: none;
+}
+
+.el-comp-tabs .el-item.el-active {
+  color: var(--mdb-primary);
+}
+
+.el-comp-tabs .el-pane.el-active {
+  display: block;
+}

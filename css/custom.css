@@ -1,0 +1,193 @@
+:root {
+  --el-tag-border-radius: 1rem;
+  --el-tag-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --el-tag-transition: 0.3s ease;
+}
+
+@font-face {
+  font-family: "font";
+  src: url("2.woff2");
+}
+
+body {
+  font-family: "font", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Lato, Roboto, "PingFang SC", "Microsoft JhengHei",
+    sans-serif;
+}
+
+#article-container pre,
+#article-container code {
+  font-family: "JetBrains Mono", consolas, Menlo, "PingFang SC",
+    "Microsoft JhengHei", sans-serif !important;
+}
+
+#footer {
+  background-color: #263238;
+}
+
+#aside-content .avatar-img img {
+  width: auto;
+  border-radius: 50%;
+}
+
+#article-container img {
+  margin: 0;
+  border-radius: 0;
+}
+
+.el-tag-iframe,
+.el-tag-img,
+.el-tag-video {
+  overflow: hidden;
+  border-radius: var(--el-tag-border-radius);
+  box-shadow: var(--el-tag-box-shadow);
+}
+
+.el-tag-iframe {
+  height: 300px;
+}
+
+.el-tag-iframe > iframe {
+  width: 100%;
+  height: calc(100% - 32px);
+  border-width: 0;
+  margin: 0 !important;
+}
+
+.el-tag-iframe .el-dots {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  background-color: #2d2d2d;
+}
+
+.el-tag-iframe .el-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.el-tag-iframe .el-dot:nth-child(1) {
+  background-color: #ff5f5a;
+}
+
+.el-tag-iframe .el-dot:nth-child(2) {
+  background-color: #ffbe46;
+}
+
+.el-tag-iframe .el-dot:nth-child(3) {
+  background-color: #00c855;
+}
+
+.el-tag-img {
+  position: relative;
+}
+
+.el-tag-img::before {
+  content: url(../svg/eye.svg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: var(--el-tag-transition);
+  /* 修复夜间模式下悬停效果被外界的 Mask 覆盖 */
+  z-index: 1;
+}
+
+.el-tag-img:hover::before {
+  opacity: 1;
+}
+
+.el-tag-video {
+  display: flex;
+}
+
+.el-tag-video > video {
+  width: 100%;
+}
+
+/* 调整公共布局 */
+
+body {
+  font-size: 1rem;
+}
+
+.layout {
+  max-width: 1300px;
+}
+
+#article-container h2 {
+  font-size: 2rem;
+}
+
+#article-container h3 {
+  font-size: 1.75rem;
+}
+
+#article-container h4 {
+  font-size: 1.5rem;
+}
+
+#article-container h5 {
+  font-size: 1.25rem;
+}
+
+#article-container h6 {
+  font-size: 1rem;
+}
+
+#article-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#article-container > h1,
+#article-container > h2,
+#article-container > h3,
+#article-container > h4,
+#article-container > h5,
+#article-container > h6,
+#article-container > pre,
+#article-container > figure.highlight,
+#article-container > p,
+#article-container > .mermaid-wrap,
+#article-container > .tabs,
+#article-container > .chartjs-container {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#article-container > hr {
+  margin: 1rem 0 !important;
+}
+
+.timeline .timeline-item-content > h1,
+.timeline .timeline-item-content > h2,
+.timeline .timeline-item-content > h3,
+.timeline .timeline-item-content > h4,
+.timeline .timeline-item-content > h5,
+.timeline .timeline-item-content > h6,
+.timeline .timeline-item-content > p,
+.timeline .timeline-item-content > ul {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.timeline .timeline-item-content ul {
+  padding-left: 1.5rem !important;
+}
+
+.timeline .timeline-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}

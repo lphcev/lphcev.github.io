@@ -1,0 +1,404 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Markdown | X-Blog</title><meta name="author" content="XYZ"><meta name="copyright" content="XYZ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Markdown 是一种轻量级标记语言，允许使用简单的文本格式来编写具备特定排版格式的文档  基础语法 标题 123456# Level 1 Title## Level 2 Title### Level 3 Title#### Level 4 Title##### Level 5 Title###### Level 6 Title 列表 无序列表 1234567891011- List Item">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown">
+<meta property="og:url" content="https://lphcev.github.io/other/markdown/index.html">
+<meta property="og:site_name" content="X-Blog">
+<meta property="og:description" content="Markdown 是一种轻量级标记语言，允许使用简单的文本格式来编写具备特定排版格式的文档  基础语法 标题 123456# Level 1 Title## Level 2 Title### Level 3 Title#### Level 4 Title##### Level 5 Title###### Level 6 Title 列表 无序列表 1234567891011- List Item">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://lphcev.github.io/media/other/markdown/0.png">
+<meta property="article:published_time" content="2000-01-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-08T13:06:59.939Z">
+<meta property="article:author" content="XYZ">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lphcev.github.io/media/other/markdown/0.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://lphcev.github.io/other/markdown/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"No results found for: ${query}","hits_stats":"${hits} articles found"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Markdown',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-06-08 21:06:59',
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">Loading...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/media/other/markdown/0.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">X-Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">Markdown</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> Search</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Markdown</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2000-01-02T16:00:00.000Z" title="Created 2000-01-03 00:00:00">2000-01-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-06-08T13:06:59.939Z" title="Updated 2025-06-08 21:06:59">2025-06-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Other/">Other</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">667</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Markdown 是一种轻量级标记语言，允许使用简单的文本格式来编写具备特定排版格式的文档</p>
+<hr>
+<h2 id="基础语法">基础语法</h2>
+<h3 id="标题">标题</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Level 1 Title</span><br><span class="line">## Level 2 Title</span><br><span class="line">### Level 3 Title</span><br><span class="line">#### Level 4 Title</span><br><span class="line">##### Level 5 Title</span><br><span class="line">###### Level 6 Title</span><br></pre></td></tr></table></figure>
+<h3 id="列表">列表</h3>
+<p>无序列表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- List Item 1</span><br><span class="line">- List Item 2</span><br><span class="line">- List Item 3</span><br><span class="line"></span><br><span class="line">* List Item 4</span><br><span class="line">* List Item 5</span><br><span class="line">* List Item 6</span><br><span class="line"></span><br><span class="line">+ List Item 7</span><br><span class="line">+ List Item 8</span><br><span class="line">+ List Item 9</span><br></pre></td></tr></table></figure>
+<p>有序列表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. List Item 1</span><br><span class="line">2. List Item 2</span><br><span class="line">3. List Item 3</span><br></pre></td></tr></table></figure>
+<h3 id="图片和超链接">图片和超链接</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![desc](url)</span><br><span class="line">[desc](url)</span><br></pre></td></tr></table></figure>
+<h3 id="引用块">引用块</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; This is a test content</span><br></pre></td></tr></table></figure>
+<h3 id="代码">代码</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">This is inline code `console.log(&#x27;Hello World&#x27;)`</span><br><span class="line"></span><br><span class="line">This is a block code</span><br><span class="line"></span><br><span class="line">```js</span><br><span class="line">function fn() &#123;</span><br><span class="line">    console.log(&#x27;Hello World&#x27;);</span><br><span class="line">&#125;</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+<h3 id="文本强调">文本强调</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*This is a test content (Italic)*</span><br><span class="line">_This is a test content (Italics)_</span><br><span class="line"></span><br><span class="line">**This is a test content (Bold)**</span><br><span class="line">__This is a test content (Bold)__</span><br><span class="line"></span><br><span class="line">***This is a test content (Italic and Bold)***</span><br><span class="line">___This is a test content (Italic and Bold)___</span><br></pre></td></tr></table></figure>
+<h3 id="分隔符">分隔符</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">***</span><br><span class="line">---</span><br><span class="line">___</span><br></pre></td></tr></table></figure>
+<h3 id="表格">表格</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| A1 | A2 | A3 |</span><br><span class="line">| -- | -- | -- |</span><br><span class="line">| B1 | B2 | B3 |</span><br><span class="line">| C1 | C2 | C3 |</span><br><span class="line">| D1 | D2 | D3 |</span><br></pre></td></tr></table></figure>
+<h2 id="扩展语法">扩展语法</h2>
+<h3 id="Emoji-表情">Emoji 表情</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:fire:</span><br></pre></td></tr></table></figure>
+<p>🔥</p>
+<h3 id="Mermaid-流程图">Mermaid 流程图</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">  A--&gt;B</span><br><span class="line">  B--&gt;C</span><br><span class="line">  B--&gt;D</span><br></pre></td></tr></table></figure>
+<pre><code class="highlight mermaid">graph TD
+  A--&gt;B
+  B--&gt;C
+  B--&gt;D</code></pre>
+<h3 id="Mermaid-图表">Mermaid 图表</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% mermaid %&#125;</span><br><span class="line">pie</span><br><span class="line">title Language</span><br><span class="line">&quot;Java&quot; : 30</span><br><span class="line">&quot;HTML&quot; : 10</span><br><span class="line">&quot;CSS&quot; : 20</span><br><span class="line">&quot;JavaScript&quot; : 40</span><br><span class="line">&#123;% endmermaid %&#125;</span><br></pre></td></tr></table></figure>
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  pie
+title Language
+&quot;Java&quot; : 30
+&quot;HTML&quot; : 10
+&quot;CSS&quot; : 20
+&quot;JavaScript&quot; : 40
+  </pre></div>
+<h3 id="标签外挂">标签外挂</h3>
+<h4 id="Tabs">Tabs</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs example %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab One --&gt;</span><br><span class="line"></span><br><span class="line">This is a test content 1</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab Two --&gt;</span><br><span class="line"></span><br><span class="line">This is a test content 2</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab Three --&gt;</span><br><span class="line"></span><br><span class="line">This is a test content 3</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">One</button><button type="button" class="tab">Two</button><button type="button" class="tab">Three</button></div><div class="tab-contents"><div class="tab-item-content active"><p>This is a test content 1</p></div><div class="tab-item-content"><p>This is a test content 2</p></div><div class="tab-item-content"><p>This is a test content 3</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h4 id="Tag-hide">Tag-hide</h4>
+<h5 id="inline">inline</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hide Content: &#123;% hideInline This is a test content, View %&#125;</span><br></pre></td></tr></table></figure>
+<p>Hide Content: <span class="hide-inline"><button type="button" class="hide-button" style=""> View
+  </button><span class="hide-content">This is a test content</span></span></p>
+<h5 id="block">block</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Hide Content</span><br><span class="line"></span><br><span class="line">&#123;% hideBlock View %&#125;</span><br><span class="line"></span><br><span class="line">This is a test content 1</span><br><span class="line">This is a test content 2</span><br><span class="line">This is a test content 3</span><br><span class="line"></span><br><span class="line">&#123;% endhideBlock %&#125;</span><br></pre></td></tr></table></figure>
+<p>Hide Content</p>
+<div class="hide-block"><button type="button" class="hide-button" style="">View
+    </button><div class="hide-content"><p>This is a test content 1<br>
+This is a test content 2<br>
+This is a test content 3</p>
+</div></div>
+<h4 id="Timeline">Timeline</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% timeline 2019 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- timeline 08-07 --&gt;</span><br><span class="line"></span><br><span class="line">This is a test content</span><br><span class="line"></span><br><span class="line">&lt;!-- endtimeline --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtimeline %&#125;</span><br></pre></td></tr></table></figure>
+<div class="timeline "><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>2019</p>
+</div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>08-07</p>
+</div></div><div class='timeline-item-content'><p>This is a test content</p>
+</div></div></div>
+<h4 id="ChartJS-图表">ChartJS 图表</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;% chartjs %&#125;</span><br><span class="line">&lt;!-- chart --&gt;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;type&quot;: &quot;line&quot;,</span><br><span class="line">    &quot;data&quot;: &#123;</span><br><span class="line">        &quot;labels&quot;: [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;],</span><br><span class="line">        &quot;datasets&quot;: [&#123;</span><br><span class="line">            &quot;label&quot;: &quot;Count&quot;,</span><br><span class="line">            &quot;backgroundColor&quot;: &quot;#d63384&quot;,</span><br><span class="line">            &quot;borderColor&quot;: &quot;#d63384&quot;,</span><br><span class="line">            &quot;data&quot;: [0, 10, 50, 20, 30, 60, 70]</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;options&quot;: &#123;</span><br><span class="line">        &quot;responsive&quot;: true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- endchart --&gt;</span><br><span class="line">&#123;% endchartjs %&#125;</span><br></pre></td></tr></table></figure>
+<div class="chartjs-container" data-chartjs-id="" >
+            <pre class="chartjs-src" hidden>{
+    &quot;type&quot;: &quot;line&quot;,
+    &quot;data&quot;: {
+        &quot;labels&quot;: [&quot;Monday&quot;, &quot;Tuesday&quot;, &quot;Wednesday&quot;, &quot;Thursday&quot;, &quot;Friday&quot;, &quot;Saturday&quot;, &quot;Sunday&quot;],
+        &quot;datasets&quot;: [{
+            &quot;label&quot;: &quot;Count&quot;,
+            &quot;backgroundColor&quot;: &quot;#d63384&quot;,
+            &quot;borderColor&quot;: &quot;#d63384&quot;,
+            &quot;data&quot;: [0, 10, 50, 20, 30, 60, 70]
+        }]
+    },
+    &quot;options&quot;: {
+        &quot;responsive&quot;: true
+    }
+}
+</pre>
+            
+          </div>
+<h4 id="IFrame">IFrame</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% iframe /single/example/ %&#125;</span><br></pre></td></tr></table></figure>
+<div class="el-tag-iframe"><div class="el-dots"><span class="el-dot"></span><span class="el-dot"></span><span class="el-dot"></span></div><iframe src="/single/example/"></iframe></div>
+<h4 id="Image">Image</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% img /media/other/markdown/0.png %&#125;</span><br></pre></td></tr></table></figure>
+<div class="el-tag-img"><img src= "/img/loading.gif" data-lazy-src="/media/other/markdown/0.png"></div>
+<h4 id="Video">Video</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% video /media/other/markdown/0.mp4 %&#125;</span><br></pre></td></tr></table></figure>
+<div class="el-tag-video"><video src="/media/other/markdown/0.mp4" controls></video></div>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://lphcev.github.io">XYZ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://lphcev.github.io/other/markdown/">https://lphcev.github.io/other/markdown/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Note/">Note</a><a class="post-meta__tags" href="/tags/Markdown/">Markdown</a></div><div class="post-share"><div class="social-share" data-image="/media/other/markdown/0.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/knowledge/frontend/sass/index/" title="Sass"><img class="cover" src= "/img/loading.gif" data-lazy-src="/media/knowledge/frontend/sass/index/0.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Sass</div></div><div class="info-2"><div class="info-item-1">Sass (Syntactically Awesome Stylesheets) 是一种 CSS 预处理器。简单来说，它是一种工具，让你能用更强大、更便捷的方式编写 CSS，然后再将这些代码转换成标准的 CSS 文件，供浏览器使用。Sass 扩展了传统 CSS 的功能，通过引入变量、嵌套规则、混合、函数等特性，使 CSS 代码更易于维护、复用和扩展  </div></div></div></a><a class="pagination-related" href="/other/undigested/" title="零散笔记"><img class="cover" src= "/img/loading.gif" data-lazy-src="/media/other/undigested/0.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">零散笔记</div></div><div class="info-2"><div class="info-item-1">Ffmpeg 压缩视频 1ffmpeg -i input.mp4 -vf &quot;scale=1280:720&quot; output.mp4 Effects Tabs HTMLCSSJSindex.html 12345678910&lt;div class=&quot;el-comp-tabs m-3&quot;&gt;  &lt;ul class=&quot;list-unstyled d-flex gap-3&quot;&gt;    &lt;li&gt;&lt;span class=&quot;el-item&quot; data-el-index=&quot;1&quot;&gt;Tab Item 1&lt;/span&gt;&lt;/li&gt;    &lt;li&gt;&lt;span class=&quot;el-item&quot; data-el-index=&quot;2&quot;&gt;Tab Item 2&lt;/span&gt;&lt;/li&gt;    &lt;li&gt;&lt;span...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/other/introduction/" title="写在最前"><img class="cover" src= "/img/loading.gif" data-lazy-src="/media/other/introduction/0.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2999-12-31</div><div class="info-item-2">写在最前</div></div><div class="info-2"><div class="info-item-1">X-Blog 是一个由 Hexo 框架 + Butterfly 主题作为基础搭建的个人博客站点，主要面向软件工程师，文章内容以 Markdown 格式呈现   更新记录 1.2.0 (Latest) 1 新增部分标签外挂  新增 iframe 标签外挂 新增 img 标签外挂 新增 video 标签外挂  2 新增 Layout 模板  新增 single.pug 模板文件 引入 MDBootstrap 现在可以自定义页面了，文章类型新增 Page  3 页面布局修改  将整站默认字体放大至 1rem 容器的 Max Width 增加至 1300px 修改了 Article Container 里标题大小 一些间距调整  4 文章 Cover 生成  新增 Google 开源字体 Tangerine 新增 /single/post-cover/ 页面，用于生成默认的文章封面   1.0.0 1 项目初始化  搭建本地 CDN 环境 config.yml 修改基本配置 新增 custom.css 和 custom.js 两个全局自定义文件 样式重置  2 默认资源文件  新增...</div></div></div></a><a class="pagination-related" href="/other/undigested/" title="零散笔记"><img class="cover" src= "/img/loading.gif" data-lazy-src="/media/other/undigested/0.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2000-01-02</div><div class="info-item-2">零散笔记</div></div><div class="info-2"><div class="info-item-1">Ffmpeg 压缩视频 1ffmpeg -i input.mp4 -vf &quot;scale=1280:720&quot; output.mp4 Effects Tabs HTMLCSSJSindex.html 12345678910&lt;div class=&quot;el-comp-tabs m-3&quot;&gt;  &lt;ul class=&quot;list-unstyled d-flex gap-3&quot;&gt;    &lt;li&gt;&lt;span class=&quot;el-item&quot; data-el-index=&quot;1&quot;&gt;Tab Item 1&lt;/span&gt;&lt;/li&gt;    &lt;li&gt;&lt;span class=&quot;el-item&quot; data-el-index=&quot;2&quot;&gt;Tab Item 2&lt;/span&gt;&lt;/li&gt;    &lt;li&gt;&lt;span...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">XYZ</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lphcev"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">当前版本 v1.2.0 <br> 所有内容仅供学习参考，如有问题可发邮箱 <i class="fas fa-envelope"></i> lphcev@163.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E5%92%8C%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="toc-number">1.3.</span> <span class="toc-text">图片和超链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E5%9D%97"><span class="toc-number">1.4.</span> <span class="toc-text">引用块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">1.5.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E5%BC%BA%E8%B0%83"><span class="toc-number">1.6.</span> <span class="toc-text">文本强调</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-number">1.7.</span> <span class="toc-text">分隔符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC"><span class="toc-number">1.8.</span> <span class="toc-text">表格</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E8%AF%AD%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">扩展语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Emoji-%E8%A1%A8%E6%83%85"><span class="toc-number">2.1.</span> <span class="toc-text">Emoji 表情</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mermaid-%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-number">2.2.</span> <span class="toc-text">Mermaid 流程图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mermaid-%E5%9B%BE%E8%A1%A8"><span class="toc-number">2.3.</span> <span class="toc-text">Mermaid 图表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82"><span class="toc-number">2.4.</span> <span class="toc-text">标签外挂</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Tabs"><span class="toc-number">2.4.1.</span> <span class="toc-text">Tabs</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Tag-hide"><span class="toc-number">2.4.2.</span> <span class="toc-text">Tag-hide</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#inline"><span class="toc-number">2.4.2.1.</span> <span class="toc-text">inline</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#block"><span class="toc-number">2.4.2.2.</span> <span class="toc-text">block</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Timeline"><span class="toc-number">2.4.3.</span> <span class="toc-text">Timeline</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ChartJS-%E5%9B%BE%E8%A1%A8"><span class="toc-number">2.4.4.</span> <span class="toc-text">ChartJS 图表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IFrame"><span class="toc-number">2.4.5.</span> <span class="toc-text">IFrame</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Image"><span class="toc-number">2.4.6.</span> <span class="toc-text">Image</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Video"><span class="toc-number">2.4.7.</span> <span class="toc-text">Video</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/other/introduction/" title="写在最前"><img src= "/img/loading.gif" data-lazy-src="/media/other/introduction/0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="写在最前"/></a><div class="content"><a class="title" href="/other/introduction/" title="写在最前">写在最前</a><time datetime="2999-12-31T15:59:59.000Z" title="Created 2999-12-31 23:59:59">2999-12-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/knowledge/frontend/sass/index/" title="Sass"><img src= "/img/loading.gif" data-lazy-src="/media/knowledge/frontend/sass/index/0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Sass"/></a><div class="content"><a class="title" href="/knowledge/frontend/sass/index/" title="Sass">Sass</a><time datetime="2000-01-03T16:00:00.000Z" title="Created 2000-01-04 00:00:00">2000-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/other/markdown/" title="Markdown"><img src= "/img/loading.gif" data-lazy-src="/media/other/markdown/0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown"/></a><div class="content"><a class="title" href="/other/markdown/" title="Markdown">Markdown</a><time datetime="2000-01-02T16:00:00.000Z" title="Created 2000-01-03 00:00:00">2000-01-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/other/undigested/" title="零散笔记"><img src= "/img/loading.gif" data-lazy-src="/media/other/undigested/0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="零散笔记"/></a><div class="content"><a class="title" href="/other/undigested/" title="零散笔记">零散笔记</a><time datetime="2000-01-01T16:00:00.000Z" title="Created 2000-01-02 00:00:00">2000-01-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/hello-world/" title="Hello World"><img src= "/img/loading.gif" data-lazy-src="/img/bg-default-1.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/hello-world/" title="Hello World">Hello World</a><time datetime="1999-12-31T16:00:00.000Z" title="Created 2000-01-01 00:00:00">2000-01-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By XYZ</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const $chartjs = document.querySelectorAll('#article-container .chartjs-container')
+  if ($chartjs.length === 0) return
+
+  const applyThemeDefaultsConfig = theme => {
+    if (theme === 'dark-mode') {
+      Chart.defaults.color = "rgba(255, 255, 255, 0.8)"
+      Chart.defaults.borderColor = "rgba(255, 255, 255, 0.2)"
+      Chart.defaults.scale.ticks.backdropColor = "transparent"
+    } else {
+      Chart.defaults.color = "rgba(0, 0, 0, 0.8)"
+      Chart.defaults.borderColor = "rgba(0, 0, 0, 0.1)"
+      Chart.defaults.scale.ticks.backdropColor = "transparent"
+    }
+  }
+
+  // Recursively traverse the config object and automatically apply theme-specific color schemes
+  const applyThemeConfig = (obj, theme) => {
+    if (typeof obj !== 'object' || obj === null) return
+    
+    Object.keys(obj).forEach(key => {
+      const value = obj[key]
+      // If the property is an object and has theme-specific options, apply them
+      if (typeof value === 'object' && value !== null) {
+        if (value[theme]) {
+          obj[key] = value[theme] // Apply the value for the current theme
+        } else {
+          // Recursively process child objects
+          applyThemeConfig(value, theme)
+        }
+      }
+    })
+  }
+
+  const runChartJS = () => {
+    window.loadChartJS = true
+
+    Array.from($chartjs).forEach((item, index) => {
+      const chartSrc = item.firstElementChild
+      const chartID = item.getAttribute('data-chartjs-id') || ('chartjs-' + index) // Use custom ID or default ID
+      const width = item.getAttribute('data-width')
+      const existingCanvas = document.getElementById(chartID)
+
+      // If a canvas already exists, remove it to avoid rendering duplicates
+      if (existingCanvas) {
+          existingCanvas.parentNode.remove()
+      }
+
+      const chartDefinition = chartSrc.textContent
+      const canvas = document.createElement('canvas')
+      canvas.id = chartID
+
+      const div = document.createElement('div')
+      div.className = 'chartjs-wrap'
+
+      if (width) {
+        div.style.width = width
+      }
+
+      div.appendChild(canvas)
+      chartSrc.insertAdjacentElement('afterend', div)
+
+      const ctx = document.getElementById(chartID).getContext('2d')
+
+      const config = JSON.parse(chartDefinition)
+
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark-mode' : 'light-mode'
+
+      // Set default styles (initial setup)
+      applyThemeDefaultsConfig(theme)
+
+      // Automatically traverse the config and apply dual-mode color schemes
+      applyThemeConfig(config, theme)
+
+      new Chart(ctx, config)
+    })
+  }
+
+  const loadChartJS = () => {
+    window.loadChartJS ? runChartJS() : btf.getScript('/npm/chart.js/dist/chart.umd.min.js').then(runChartJS)
+  }
+
+  // Listen for theme change events
+  btf.addGlobalFn('themeChange', runChartJS, 'chartjs')
+  btf.addGlobalFn('encrypt', runChartJS, 'chartjs')
+
+  window.pjax ? loadChartJS() : document.addEventListener('DOMContentLoaded', loadChartJS)
+})()</script></div><script src="/js/custom.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="请输入搜索关键字..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
