@@ -2,8 +2,19 @@
   height: var(--header-height);
   background-color: rgba(255, 255, 255, .5);
   backdrop-filter: blur(5px);
+  border-bottom: 1px solid;
+  border-color: var(--color-gray-100);
+
+  .el-logo {
+    font-family: OleoScript-Regular;
+    font-size: var(--text-3xl);
+    line-height: var(--text-3xl--line-height);
+    background: linear-gradient(45deg, var(--color-success), var(--color-info));
+    background-clip: text;
+  }
 }
 
 html.dark #header {
   background-color: rgba(0, 0, 0, .5);
+  border-color: var(--color-gray-900);
 }
