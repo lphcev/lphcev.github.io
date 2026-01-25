@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  --body-bg: #FFFFFF;
+  --body-color: #191E23;
+  --color-transition: 0.3s ease;
+}
+
+.dark {
+  --body-bg: #050A0F;
+  --body-color: #D2D7DC;
+}
+
+@theme {
+  --body-bg: var(--body-bg);
+  --body-color: var(--body-color);
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--body-color);
+  transition: background-color var(--color-transition), color var(--color-transition);
+}

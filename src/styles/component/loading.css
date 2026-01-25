@@ -1,0 +1,17 @@
+:root {
+  --sk-color: var(--body-color);
+}
+
+#loading {
+  background-color: var(--body-bg);
+  color: var(--body-color);
+
+  .el-box {
+    width: 70px;
+    height: 70px;
+  }
+
+  .el-text {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets'
+import type { CollectionEntry } from 'astro:content'
+import FormattedDate from '@/components/FormattedDate.astro'
+import PageWrapper from '@/layouts/PageWrapper.astro'
+import Toc from '@/components/Toc.tsx'
+
+type Props = CollectionEntry<'blog'>['data']
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props
+---
+
+<PageWrapper>
+  <div class="container mx-auto p-5 min-h-screen flex flex-col gap-5 sm:flex-row">
+    <article id="article" class="flex-1"><slot /></article>
+    <aside id="aside">
+      <div class="bg-gray-300 h-[100px]">123132</div>
+      <Toc client:load />
+    </aside>
+  </div>
+</PageWrapper>
+
+<!-- <div>
+    {heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+  </div>
+  <div>
+    {description}
+  </div>
+  <div>
+    <div>
+      <div>
+        <FormattedDate date={pubDate} />
+        {
+          updatedDate && (
+            <div>
+              Last updated on <FormattedDate date={updatedDate} />
+            </div>
+          )
+        }
+      </div>
+      <h1>{title}</h1>
+      <hr />
+    </div>
+    <slot />
+  </div> -->

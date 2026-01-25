@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { Image } from 'astro:assets'
+import FormattedDate from '@/components/FormattedDate.astro'
+import PageWrapper from '@/layouts/PageWrapper.astro'
+
+interface Props {
+  posts: CollectionEntry<'blog'>[]
+}
+
+const { posts } = Astro.props as Props
+---
+
+<PageWrapper>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`/blog/${post.id}/`}>
+            {post.data.heroImage && <Image width={720} height={360} src={post.data.heroImage} alt="" />}
+            <h4 class="title">{post.data.title}</h4>
+            <p class="date">
+              <FormattedDate date={post.data.pubDate} />
+            </p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</PageWrapper>
