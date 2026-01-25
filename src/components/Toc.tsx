@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import 'tocbot/dist/tocbot.css'
+import '@/styles/component/toc.css'
 
 const Component = () => {
   const tocbotRef = useRef<any>(null)
@@ -21,7 +22,7 @@ const Component = () => {
     }
   }, [])
 
-  return <nav id="toc" className="toc sticky top-0"></nav>
+  return <nav id="toc" className="toc sticky top-0 break-words"></nav>
 }
 
 export default Component
