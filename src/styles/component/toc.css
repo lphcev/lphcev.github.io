@@ -1,5 +1,6 @@
 #toc {
   width: 250px;
+  top: calc(var(--spacing) * 5 + var(--header-height));
 
   a.toc-link {
     line-height: var(--leading-loose);

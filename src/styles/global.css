@@ -1,0 +1,7 @@
+:root {
+  --header-height: 70px;
+}
+
+.ut-header-offset {
+  margin-top: var(--header-height);
+}

@@ -1,3 +1,7 @@
+#post {
+  margin-top: var(--header-height);
+}
+
 #article {
 
   h1,
