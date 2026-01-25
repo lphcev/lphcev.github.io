@@ -4,6 +4,12 @@
   --body-bg: #FFFFFF;
   --body-color: #191E23;
   --color-transition: 0.3s ease;
+  --color-primary: #0d6efd;
+  --color-secondary: #6c757d;
+  --color-success: #198754;
+  --color-info: #0dcaf0;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
 }
 
 .dark {
