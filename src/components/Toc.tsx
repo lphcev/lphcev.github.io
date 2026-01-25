@@ -22,7 +22,7 @@ const Component = () => {
     }
   }, [])
 
-  return <nav id="toc" className="toc sticky top-0 break-words"></nav>
+  return <nav id="toc" className="toc sticky top-5 break-words"></nav>
 }
 
 export default Component

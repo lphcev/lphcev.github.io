@@ -1,6 +1,5 @@
 import TextField from '@mui/material/TextField'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
 import { useEffect, useState } from 'react'
 
 const Component = () => {
@@ -18,7 +17,6 @@ const Component = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
       <TextField id="outlined-basic" label="Outlined" variant="outlined" />
       <TextField id="filled-basic" label="Filled" variant="filled" />
       <TextField id="standard-basic" label="Standard" variant="standard" />
