@@ -1,4 +1,5 @@
 import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { useEffect, useState } from 'react'
 
@@ -17,6 +18,9 @@ const Component = () => {
 
   return (
     <ThemeProvider theme={theme}>
+      <Button variant="text">Text</Button>
+      <Button variant="contained">Contained</Button>
+      <Button variant="outlined">Outlined</Button>
       <TextField id="outlined-basic" label="Outlined" variant="outlined" />
       <TextField id="filled-basic" label="Filled" variant="filled" />
       <TextField id="standard-basic" label="Standard" variant="standard" />
