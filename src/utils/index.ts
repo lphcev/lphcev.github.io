@@ -17,4 +17,4 @@ export const applyTheme = (theme: ThemeModeEnum): void => {
   document.documentElement.classList.toggle(theme)
 }
 
-export const initializeThemeScript = `if (localStorage.getItem('theme') === 'dark') { document.documentElement.classList.toggle('dark') }`
+export const initializeThemeScript = `if (localStorage.getItem('theme') === 'dark' || window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.classList.toggle('dark')`

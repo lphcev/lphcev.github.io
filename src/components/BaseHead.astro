@@ -52,7 +52,5 @@ const { title, description, image = FallbackImage } = Astro.props
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
 
 <script define:vars={{ initializeThemeScript }}>
-  localStorage.setItem('theme', 'dark')
-  console.log(localStorage.getItem('theme'))
   eval(initializeThemeScript)
 </script>
