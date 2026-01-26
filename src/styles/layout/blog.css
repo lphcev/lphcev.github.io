@@ -24,7 +24,7 @@
       }
 
       .el-desc {
-        @apply sm:line-clamp-3 break-all mb-1;
+        @apply sm:line-clamp-3 break-all mb-1 mt-3;
       }
     }
   }
