@@ -18,11 +18,7 @@ const Component = ({ children }: ComponentProps) => {
     setTheme(newTheme)
   }, [])
 
-  return (
-    <div className="ut-header-offset">
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
-    </div>
-  )
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
 
 export default Component
