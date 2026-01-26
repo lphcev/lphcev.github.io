@@ -22,7 +22,7 @@ const Component = () => {
     }
   }, [])
 
-  return <div id="toc" className="toc sticky break-words text-sm"></div>
+  return <div id="toc" className="toc sticky break-all text-sm"></div>
 }
 
 export default Component

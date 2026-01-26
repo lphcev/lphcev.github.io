@@ -1,0 +1,38 @@
+@reference "tailwindcss";
+
+#blog {
+  @apply flex flex-col gap-5;
+
+  .el-item {
+    @apply flex flex-col sm:flex-row sm:items-center gap-5;
+
+    .el-left {
+      @apply rounded-xl;
+
+      .el-image {
+        @apply w-full h-auto aspect-2/1 min-w-full max-w-full rounded-xl sm:w-[300px] sm:min-w-[300px] sm:max-w-[300px];
+      }
+    }
+
+    .el-right {
+      .el-title {
+        background-image: linear-gradient(to right, var(--body-color), var(--body-color));
+        transition: background-size var(--ut-transition);
+        background-position: right bottom;
+        background-size: 0% 2px;
+        @apply text-xl sm:text-2xl break-all mb-5 bg-no-repeat;
+      }
+
+      .el-desc {
+        @apply sm:line-clamp-3 break-all mb-1;
+      }
+    }
+  }
+
+  .el-item:hover {
+    .el-title {
+      background-position: left bottom;
+      background-size: 100% 2px;
+    }
+  }
+}

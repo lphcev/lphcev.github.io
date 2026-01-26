@@ -9,7 +9,6 @@
   --color-info: #0dcaf0;
   --color-warning: #ffc107;
   --color-danger: #dc3545;
-  --color-transition: 0.3s ease;
 }
 
 .dark {
@@ -25,9 +24,9 @@
 body {
   background-color: var(--body-bg);
   color: var(--body-color);
-  transition: background-color var(--color-transition), color var(--color-transition);
+  transition: background-color var(--ut-transition), color var(--ut-transition);
 }
 
 @utility ut-base-container {
-  @apply container mx-auto p-5
+  @apply container mx-auto p-5;
 }

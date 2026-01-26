@@ -21,7 +21,7 @@ html.dark #toc {
   }
 
   .toc-link::before {
-    background-color: var(--color-gray-500);
+    background-color: var(--color-gray-700);
   }
 
   .is-active-link::before {

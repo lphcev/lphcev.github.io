@@ -33,7 +33,7 @@ const Component = () => {
     <div
       ref={loadingRef}
       id="loading"
-      className="fixed inset-0 flex flex-col items-center justify-center bg-white z-1"
+      className="fixed inset-0 flex flex-col items-center justify-center z-2"
       style={{ transition: `opacity ${fadeDuration}ms ease` }}
     >
       <div className="el-box sk-chase">

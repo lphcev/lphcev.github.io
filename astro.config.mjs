@@ -9,5 +9,5 @@ export default defineConfig({
   site: 'https://lphcev.github.io',
   integrations: [mdx(), sitemap(), react()],
   vite: { plugins: [tailwindcss()] },
-  markdown: { shikiConfig: { theme: 'github-dark-default' } },
+  markdown: { shikiConfig: { theme: 'catppuccin-mocha' } },
 })
