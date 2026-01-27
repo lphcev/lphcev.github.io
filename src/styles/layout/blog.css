@@ -19,6 +19,7 @@
       @apply flex-1;
 
       .el-title {
+        transition: color var(--ut-transition);
         @apply text-xl sm:text-2xl break-all mb-3;
       }
 
@@ -37,6 +38,11 @@
   }
 
   .el-item:hover {
+
+    .el-title {
+      color: var(--color-primary);
+    }
+
     .el-desc {
       background-position: left bottom;
       background-size: 100% 2px;
