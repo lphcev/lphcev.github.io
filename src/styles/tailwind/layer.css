@@ -1,0 +1,5 @@
+@layer utilities {
+  .ut-base-container {
+    @apply container mx-auto p-5;
+  }
+}
