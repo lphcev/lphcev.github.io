@@ -2,4 +2,23 @@
   .ut-base-container {
     @apply container mx-auto p-5;
   }
+
+  .ut-header-offset {
+    margin-top: var(--header-height);
+  }
 }
+
+/* breakpoint: sm */
+@media (min-width: 40rem) {}
+
+/* breakpoint: md */
+@media (min-width: 48rem) {}
+
+/* breakpoint: lg */
+@media (min-width: 64rem) {}
+
+/* breakpoint: xl */
+@media (min-width: 80rem) {}
+
+/* breakpoint: 2xl */
+@media (min-width: 96rem) {}
