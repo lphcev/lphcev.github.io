@@ -5,7 +5,7 @@ pubDate: 'Jul 08 2026'
 heroImage: '../../assets/bg-0.webp'
 ---
 
-## Default Theme
+## Tailwindcss Default Theme
 
 ```css
   @theme default {
