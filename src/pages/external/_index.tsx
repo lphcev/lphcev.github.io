@@ -87,7 +87,7 @@ const Component = () => {
       <div className="ut-base-container ut-header-offset">
         <Card>
           <CardContent>
-            <div className="mb-5 text-3xl">Text Sort</div>
+            <div className="mb-5 text-xl">Text Sort</div>
             <div className="flex flex-col gap-5">
               {message && (
                 <Alert onClose={() => setMessage(null)} severity={severity}>
