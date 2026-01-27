@@ -9,7 +9,7 @@
     font-family: OleoScript-Regular;
     font-size: var(--text-3xl);
     line-height: var(--text-3xl--line-height);
-    background: linear-gradient(45deg, var(--color-primary), var(--color-info));
+    background: linear-gradient(45deg, var(--color-primary), var(--color-primary));
     background-clip: text;
   }
 }

@@ -1,5 +1,6 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { useEffect, useState, type ReactNode } from 'react'
+import CssBaseline from '@mui/material/CssBaseline'
 
 interface ComponentProps {
   children: ReactNode
@@ -18,7 +19,12 @@ const Component = ({ children }: ComponentProps) => {
     setTheme(newTheme)
   }, [])
 
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {children}
+    </ThemeProvider>
+  )
 }
 
 export default Component

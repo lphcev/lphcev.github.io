@@ -14,6 +14,7 @@ const { posts } = Astro.props as Props
 
 <PageWrapper>
   <div class="ut-base-container ut-header-offset">
+    <div class="text-3xl mb-5">Posts</div>
     <ul id="blog">
       {
         posts.map((post) => (
@@ -23,8 +24,8 @@ const { posts } = Astro.props as Props
                 {post.data.heroImage && <Image class="el-image" src={post.data.heroImage} alt="" />}
               </div>
               <div class="el-right">
-                <span class="el-title">{post.data.title}</span>
-                <div class="el-desc">{post.data.description}</div>
+                <div class="el-title">{post.data.title}</div>
+                <span class="el-desc">{post.data.description}</span>
                 <div class="el-date">
                   <FormattedDate date={post.data.pubDate} />
                 </div>

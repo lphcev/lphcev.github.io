@@ -4,35 +4,46 @@
   @apply flex flex-col gap-5;
 
   .el-item {
-    @apply flex flex-col sm:flex-row sm:items-center gap-5;
+    @apply flex flex-col sm:flex-row gap-5;
 
     .el-left {
-      @apply rounded-xl;
+      @apply rounded-xl overflow-hidden w-full sm:w-6/12 lg:w-3/12 flex-none;
 
       .el-image {
-        @apply w-full h-auto aspect-2/1 min-w-full max-w-full rounded-xl sm:w-[300px] sm:min-w-[300px] sm:max-w-[300px];
+        transition: transform var(--ut-transition);
+        @apply w-full h-auto aspect-2/1 min-w-full max-w-full rounded-xl;
       }
     }
 
     .el-right {
+      @apply flex-1;
+
       .el-title {
+        @apply text-xl sm:text-2xl break-all mb-3;
+      }
+
+      .el-desc {
         background-image: linear-gradient(to right, var(--body-color), var(--body-color));
         transition: background-size var(--ut-transition);
         background-position: right bottom;
         background-size: 0% 2px;
-        @apply text-xl sm:text-2xl break-all mb-5 bg-no-repeat;
+        @apply break-all bg-no-repeat;
       }
 
-      .el-desc {
-        @apply sm:line-clamp-3 break-all mb-1 mt-3;
+      .el-date {
+        @apply mt-2;
       }
     }
   }
 
   .el-item:hover {
-    .el-title {
+    .el-desc {
       background-position: left bottom;
       background-size: 100% 2px;
+    }
+
+    .el-image {
+      transform: scale(1.2);
     }
   }
 }
