@@ -10,4 +10,8 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), react()],
   vite: { plugins: [tailwindcss()] },
   markdown: { shikiConfig: { theme: 'catppuccin-mocha' } },
+  server: {
+    host: true,
+    port: 3000,
+  }
 })

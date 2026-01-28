@@ -84,7 +84,7 @@ const Component = () => {
 
   return (
     <ReactContainer>
-      <div className="ut-base-container ut-header-offset">
+      <div className="comp-container ut-header-offset">
         <Card>
           <CardContent>
             <div className="mb-5 text-xl">Text Sort</div>

@@ -1,3 +1,4 @@
 @import "tailwindcss";
 @import "./color.css";
-@import "./layer.css"
+@import "./theme.css";
+@import "./layer.css";

@@ -7,10 +7,3 @@
   font-family: 'OleoScript-Bold';
   src: url('/fonts/OleoScript-Bold.ttf') format('truetype');
 }
-
-:root {
-  --header-height: 70px;
-  --default-font-family: "Roboto", "Source Han Sans CN", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", "Noto Sans", "Liberation Sans", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --default-mono-font-family: "JetBrains Mono", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
-  --ut-transition: 300ms ease;
-}

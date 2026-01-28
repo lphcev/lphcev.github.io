@@ -1,6 +1,12 @@
 :root {
   --body-bg: #FFFFFF;
   --body-color: #191E23;
+  --color-primary: #1976d2;
+  --color-secondary: #9c27b0;
+  --color-error: #d32f2f;
+  --color-warning: #ed6c02;
+  --color-info: #0288d1;
+  --color-success: #2e7d32;
 }
 
 .dark {
@@ -12,21 +18,4 @@
   --color-warning: #ffa726;
   --color-info: #29b6f6;
   --color-success: #66bb6a;
-}
-
-@theme {
-  --body-bg: var(--body-bg);
-  --body-color: var(--body-color);
-  --color-primary: #1976d2;
-  --color-secondary: #9c27b0;
-  --color-error: #d32f2f;
-  --color-warning: #ed6c02;
-  --color-info: #0288d1;
-  --color-success: #2e7d32;
-}
-
-body {
-  background-color: var(--body-bg);
-  color: var(--body-color);
-  transition: background-color var(--ut-transition), color var(--ut-transition);
 }

@@ -8,7 +8,7 @@ type Props = CollectionEntry<'blog'>['data']
 ---
 
 <PageWrapper>
-  <div id="post" class="ut-header-offset ut-base-container flex flex-col gap-5 xl:flex-row">
+  <div id="post" class="ut-header-offset comp-container flex flex-col gap-5 xl:flex-row">
     <article id="article" class="flex-1"><slot /></article>
     <aside id="aside">
       <Toc client:load />

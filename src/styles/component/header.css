@@ -4,14 +4,7 @@
   backdrop-filter: blur(7px);
   border-bottom: 1px solid;
   border-color: var(--color-gray-100);
-
-  .el-logo {
-    font-family: OleoScript-Regular;
-    font-size: var(--text-3xl);
-    line-height: var(--text-3xl--line-height);
-    background: linear-gradient(45deg, var(--color-primary), var(--color-primary));
-    background-clip: text;
-  }
+  -webkit-backdrop-filter: blur(7px);
 }
 
 html.dark #header {
