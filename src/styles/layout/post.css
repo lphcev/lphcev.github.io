@@ -23,3 +23,20 @@
   font-size: var(--text-sm);
   line-height: var(--leading-relaxed);
 }
+
+@media print {
+
+  #header,
+  #footer,
+  #aside {
+    display: none;
+  }
+
+  @page {
+    padding-top: 3rem;
+  }
+
+  @page :first {
+    padding-top: 0;
+  }
+}
