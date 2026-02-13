@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import PageWrapper from '@/layouts/PageWrapper.astro'
+import Toc from '@/components/Toc.tsx'
+import '@/styles/layout/post.css'
+
+type Props = CollectionEntry<'blog'>['data']
+---
+
+<PageWrapper>
+  <div id="post" class="ut-header-offset comp-container flex flex-col gap-5 xl:flex-row">
+    <article id="article" class="flex-1"><slot /></article>
+    <aside id="aside">
+      <Toc client:load />
+    </aside>
+  </div>
+</PageWrapper>

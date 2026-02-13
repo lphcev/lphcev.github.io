@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'OleoScript-Regular';
+  src: url('/fonts/OleoScript-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OleoScript-Bold';
+  src: url('/fonts/OleoScript-Bold.ttf') format('truetype');
+}
