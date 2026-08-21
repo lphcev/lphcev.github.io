@@ -1,0 +1,10 @@
+@theme {
+  --body-bg: var(--body-bg);
+  --body-color: var(--body-color);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-error: var(--color-error);
+  --color-warning: var(--color-warning);
+  --color-info: var(--color-info);
+  --color-success: var(--color-success);
+}

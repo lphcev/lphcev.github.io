@@ -1,0 +1,41 @@
+@layer base {
+  :root {
+    --header-height: 70px;
+    --default-font-family: "Roboto", "Source Han Sans CN", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", "Noto Sans", "Liberation Sans", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --default-mono-font-family: "JetBrains Mono", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+    --ut-transition: 300ms ease;
+  }
+
+  body {
+    background-color: var(--body-bg);
+    color: var(--body-color);
+    transition: background-color var(--ut-transition), color var(--ut-transition);
+  }
+}
+
+@layer utilities {
+  .ut-header-offset {
+    margin-top: var(--header-height);
+  }
+}
+
+@layer components {
+  .comp-container {
+    @apply container mx-auto p-5;
+  }
+}
+
+/* breakpoint: sm */
+@media (min-width: 40rem) {}
+
+/* breakpoint: md */
+@media (min-width: 48rem) {}
+
+/* breakpoint: lg */
+@media (min-width: 64rem) {}
+
+/* breakpoint: xl */
+@media (min-width: 80rem) {}
+
+/* breakpoint: 2xl */
+@media (min-width: 96rem) {}

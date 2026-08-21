@@ -1,0 +1,38 @@
+#toc {
+  width: 250px;
+  top: calc(var(--spacing) * 5 + var(--header-height));
+
+  a.toc-link {
+    line-height: var(--leading-loose);
+  }
+
+  .toc-list {
+    padding-left: calc(var(--spacing) * 5)
+  }
+}
+
+html.dark #toc {
+  .toc-list-item {
+    color: var(--color-gray-400);
+
+    &.is-active-li {
+      color: var(--color-gray-100);
+    }
+  }
+
+  .toc-link::before {
+    background-color: var(--color-gray-700);
+  }
+
+  .is-active-link::before {
+    background-color: var(--color-gray-100);
+  }
+
+  .toc-link::before {
+    width: 1px;
+  }
+
+  .is-active-link {
+    font-weight: initial;
+  }
+}

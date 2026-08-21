@@ -1,0 +1,55 @@
+@reference "tailwindcss";
+
+#blog {
+  @apply flex flex-col gap-5;
+
+  .el-item {
+    @apply flex flex-col sm:flex-row gap-5;
+
+    .el-left {
+      @apply rounded-xl overflow-hidden w-full sm:w-6/12 lg:w-3/12 flex-none;
+
+      .el-image {
+        transition: transform var(--ut-transition);
+        @apply w-full h-auto aspect-2/1 min-w-full max-w-full rounded-xl;
+      }
+    }
+
+    .el-right {
+      @apply flex-1;
+
+      .el-title {
+        transition: color var(--ut-transition);
+        @apply text-xl sm:text-2xl break-all mb-3;
+      }
+
+      .el-desc {
+        background-image: linear-gradient(to right, var(--body-color), var(--body-color));
+        transition: background-size var(--ut-transition);
+        background-position: right bottom;
+        background-size: 0% 2px;
+        @apply break-all bg-no-repeat;
+      }
+
+      .el-date {
+        @apply mt-2;
+      }
+    }
+  }
+
+  .el-item:hover {
+
+    .el-title {
+      color: var(--color-primary);
+    }
+
+    .el-desc {
+      background-position: left bottom;
+      background-size: 100% 2px;
+    }
+
+    .el-image {
+      transform: scale(1.2);
+    }
+  }
+}
