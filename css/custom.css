@@ -41,6 +41,10 @@
   }
 
   #aside-content #card-toc .toc-content .toc-link {
-    line-height: 2.5 !important;
+    line-height: 2.5;
+  }
+
+  #page-header #site-title {
+    margin-bottom: 1rem;
   }
 }
