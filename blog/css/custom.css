@@ -1,0 +1,50 @@
+@media (min-width: 1400px) {
+  #post {
+    font-size: 1rem;
+  }
+
+  #post h1,
+  #post h2,
+  #post h3,
+  #post h4,
+  #post h5 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #post h1 {
+    font-size: 2rem;
+  }
+
+  #post h2 {
+    font-size: 1.75rem;
+  }
+
+  #post h3 {
+    font-size: 1.5rem;
+  }
+
+  #post h4 {
+    font-size: 1.25rem;
+  }
+
+  #post h5 {
+    font-size: 1rem;
+  }
+
+  #page-header #post-info > * {
+    margin-bottom: 1rem;
+  }
+
+  .layout {
+    max-width: 1300px;
+  }
+
+  #aside-content #card-toc .toc-content .toc-link {
+    line-height: 2.5;
+  }
+
+  #page-header #site-title {
+    margin-bottom: 1rem;
+  }
+}
