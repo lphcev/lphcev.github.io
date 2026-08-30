@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as s}from"./chunks/framework.CnH-Xjyd.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"assessment/basic/html.md","filePath":"assessment/basic/html.md"}'),a={name:"assessment/basic/html.md"};function c(n,r,o,m,i,l){return t(),s("div")}const d=e(a,[["render",c]]);export{_ as __pageData,d as default};
